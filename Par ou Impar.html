@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Impar</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Declaração de variáveis
+        var jogador = (prompt("Digite o seu nome"));
+        var jogada = (prompt("Digite Par ou Ímpar").toUpperCase());//Todas as letras ficam em caixa alta
+        var numero = parseInt(prompt("Digite um número de 0 a 10"));
+        var comp = Math.floor(Math.random() * 11)
+        var soma = comp + numero
+        var comp_jog = ""
+        //Lógica
+        if (jogada == "PAR" && soma % 2 == 0 || jogada == "ÍMPAR" && soma % 2 == 1){
+            if (jogada == "PAR") {
+                comp_jog = "ÍMPAR";
+            }
+            else {
+                comp_jog = "PAR";
+            }
+            alert(`O jogador ${jogador} escolheu ${jogada} e o número ${numero}. O computador escolheu ${comp_jog} e o núemro ${comp}. Jogador vence!`)
+
+        }
+
+        else {
+            if (jogada == "PAR") {
+                comp_jog = "ÍMPAR"
+            }
+            else {
+                comp_jog = "PAR"
+            }
+            alert(`O jogador ${jogador} escolheu ${jogada} e o número ${numero}. O computador escolheu ${comp_jog} e o núemro ${comp}. Jogador perde!`)
+
+        }
+
+    </script>
+</body>
+</html>

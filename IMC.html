@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var nome = prompt("Digite o nome do paciente: ");
+        var peso = parseFloat(prompt("Digite o peso: "));
+        var altura = parseFloat(prompt("Digite a altura em metros: "));
+        var imc = peso / (altura*altura);
+        if (imc <= 18.5 && imc <= 24.9) {
+            alert(`O paciente ${nome} tem o imc de ${imc.toFixed(2)} e está abaixo do peso ideal`);
+        }
+        else if (imc >= 25 && imc <= 29.9) {
+            alert(`O paciente ${nome} tem o imc de ${imc.toFixed(2)} e está dentro do peso ideal`);
+        }
+        else if (imc >= 30 && imc <= 34.5) {
+            alert(`O paciente ${nome} tem o imc de ${imc.toFixed(2)} e está com obesidade grau 1`);
+        }
+        else {
+            alert(`O paciente ${nome} tem o imc de ${imc.toFixed(2)} e está com obesidade grau 2`);
+        }
+    </script>
+</body>
+</html>
