@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio - Médias Escolares</title>
+    <style>
+        /* Configurações Globais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Fundo Laranja Vibrante e Profundo */
+        body {
+            background: linear-gradient(135deg, #00ccff, #0044ff, #8400ff);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Espaçador superior para manter o card centralizado */
+        .espacador {
+            flex: 1;
+        }
+
+        /* Cartão Principal */
+        #conteudo {
+            width: 380px;   
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        /* Cabeçalho Laranja */
+        #titulo {
+            background-color: #005696;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Área do Form */
+        #form {
+            padding: 25px;
+        }
+
+        /* Estilização e Espaçamento dos Campos */
+        #form form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        #form label {
+            font-size: 0.9em;
+            color: #333333;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #form input[type="text"] {
+            width: 60%;
+            padding: 8px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        #form input[type="text"]:focus {
+            border-color: #e65100;
+            box-shadow: 0 0 5px rgba(230, 81, 0, 0.3);
+        }
+
+        /* Botão */
+        #botao {
+            margin-top: 6px;
+            padding: 12px;
+            background-color: #ff6d00;
+            border: none;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        #botao:hover {
+            background-color: #d85c00;
+        }
+
+        #botao:active {
+            transform: scale(0.98);
+        }
+
+        /* Área de Resultados */
+        #painel-resultados {
+            background-color: #fff8f5;
+            border-top: 1px solid #ffe0b2;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .bloco-resultado {
+            width: 48%;
+        }
+
+        .rotulo {
+            font-size: 0.8em;
+            color: #7c431d;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #resultado, #status {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        /* Rodapé do Site (fora da div #conteudo) */
+        #rodape-site {
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+    <script>
+        //Funcao para calcular a media
+        function calcular_media(){
+            //Serve para colocar um alerta no navegador
+            //alert("Bem vindo ao sistema de calculo")
+
+            //Serve para fazer uma pergunta para o usuario
+            //confirm("Deseja realmente caulcular?")
+
+            //Serve para solicitar uma entrada de dados
+            //var nome = prompt("Digite seu nome")
+            
+            //Serve para colocar uma mensagem na area de Debug do navegador
+            //console.log("Testando o debug em JS " + nome)
+
+            var valor1 = document.getElementById('valor1')
+            console.log(valor1.value)
+
+            var valor2 = document.getElementById('valor2')
+            console.log(valor2.value)
+
+            var valor3 = document.getElementById('valor3')
+            console.log(valor3.value)  
+
+            var valor4 = document.getElementById('valor4')
+            console.log(valor4.value)
+        }
+    </script>
+</head>
+<body>  
+
+    <div class="espacador"></div>
+
+    <div id="conteudo">
+        <div id="titulo">
+            Médias Escolares
+        </div>
+
+        <div id="form">
+            <form name="frmmedia">
+                <label>Nota 1: <input type="text" name="txtn1" id="valor1"></label>
+                <label>Nota 2: <input type="text" name="txtn2" id="valor2"></label>
+                <label>Nota 3: <input type="text" name="txtn3" id="valor3"></label>
+                <label>Nota 4: <input type="text" name="txtn4" id="valor4"></label>
+                <input type="button" name="btncalc" id="botao" value="Calcular Média" onclick="calcular_media()">
+            </form>
+        </div>
+
+        <div id="painel-resultados">
+            <div class="bloco-resultado">
+                <div class="rotulo">Média</div>
+                <div id="resultado">0.0</div>
+            </div>
+            <div class="bloco-resultado">               
+                <div class="rotulo">Status</div>
+                <div id="status">-</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="espacador"></div>
+
+    <!-- Rodapé fora da caixa de conteúdo -->
+    <footer id="rodape-site">
+        Prof. Marcel - Desenvolvimento Javascript - Universidade Anhanguera Osasco
+    </footer>
+
+</body>
+</html>
