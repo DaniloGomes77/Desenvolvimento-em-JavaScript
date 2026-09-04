@@ -150,6 +150,7 @@
     <script>
         //Funcao para calcular a media
         function calcular_media(){
+
             //Serve para colocar um alerta no navegador
             //alert("Bem vindo ao sistema de calculo")
 
@@ -162,6 +163,12 @@
             //Serve para colocar uma mensagem na area de Debug do navegador
             //console.log("Testando o debug em JS " + nome)
 
+            //Recebe para receber os valores digitados, nas caixas de texto
+
+            if(valor1.value == '' || valor2.value == '' || valor3.value == '' || valor4.value == '' ){
+                alert('É obrigatorio todos os valores!')
+            }else{
+            
             var valor1 = document.getElementById('valor1')
             console.log(valor1.value)
 
@@ -173,6 +180,18 @@
 
             var valor4 = document.getElementById('valor4')
             console.log(valor4.value)
+            
+            //Recebe o resultado do HTML para colocar o resultado da média encontrada
+            var resultado = document.getElementById('resultado')
+
+            //Realiza o calculo da média
+            //Number() -> Converte uma String para numero
+            var media = (Number(valor1.value) + Number(valor2.value) + Number(valor3.value) + Number(valor4.value)) / 4
+            
+            //Colocando o valor da media no elemento do HTML
+            //toFixed -> Permite limitar a quantidade de casas decimais
+            resultado.innerText = media.toFixed(2)
+            }
         }
     </script>
 </head>
@@ -186,7 +205,7 @@
         </div>
 
         <div id="form">
-            <form name="frmmedia">
+            <form name="frmmedia">      
                 <label>Nota 1: <input type="text" name="txtn1" id="valor1"></label>
                 <label>Nota 2: <input type="text" name="txtn2" id="valor2"></label>
                 <label>Nota 3: <input type="text" name="txtn3" id="valor3"></label>
