@@ -14,7 +14,7 @@
 
         /* Fundo Laranja Vibrante e Profundo */
         body {
-            background: linear-gradient(135deg, #00ccff, #0044ff, #8400ff);
+            background: linear-gradient(135deg, #020614, #0030de, #00d7fd);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -165,10 +165,6 @@
 
             //Recebe para receber os valores digitados, nas caixas de texto
 
-            if(valor1.value == '' || valor2.value == '' || valor3.value == '' || valor4.value == '' ){
-                alert('É obrigatorio todos os valores!')
-            }else{
-            
             var valor1 = document.getElementById('valor1')
             console.log(valor1.value)
 
@@ -180,18 +176,58 @@
 
             var valor4 = document.getElementById('valor4')
             console.log(valor4.value)
-            
-            //Recebe o resultado do HTML para colocar o resultado da média encontrada
-            var resultado = document.getElementById('resultado')
+
+            //Limpando as caixas de valores
+             valor1.style.backgroundColor = '#ffffff' 
+             valor2.style.backgroundColor = '#ffffff' 
+             valor3.style.backgroundColor = '#ffffff' 
+             valor4.style.backgroundColor = '#ffffff'
+
+            if(valor1.value == ''){
+                
+                valor1.style.backgroundColor = '#f700ff' //style.backgroundColor -> permite trocar a cor de fundo   
+                alert('A caixa da nota 1 não foi preenchida')
+
+            }else if(valor2.value == ''){
+                
+                valor2.style.backgroundColor = '#f700ff'
+                alert('A caixa da nota 2 não foi preenchida')
+
+            }else if(valor3.value == ''){
+
+                valor3.style.backgroundColor = '#f700ff'
+                alert('A caixa da nota 3 não foi preenchida')
+
+            }else if(valor4.value == ''){
+                
+                valor4.style.backgroundColor = '#f700ff'
+                alert('A caixa da nota 4 não foi preenchida')
+            }else{
 
             //Realiza o calculo da média
             //Number() -> Converte uma String para numero
             var media = (Number(valor1.value) + Number(valor2.value) + Number(valor3.value) + Number(valor4.value)) / 4
             
+            //Recebe o resultado do HTML para colocar o resultado da média encontrada
+            var resultado = document.getElementById('resultado')
+            var status = document.getElementById('status')
+
             //Colocando o valor da media no elemento do HTML
             //toFixed -> Permite limitar a quantidade de casas decimais
             resultado.innerText = media.toFixed(2)
+
+            if(media >= 7){
+
+                status.innerText = 'Aprovado'
+            
+            }else if(media >= 5 && media <  7){
+
+                status.innerText = 'Exame'
+
+            }else if(media < 5){
+                status.innerText = 'Reprovado'
             }
+        }
         }
     </script>
 </head>
