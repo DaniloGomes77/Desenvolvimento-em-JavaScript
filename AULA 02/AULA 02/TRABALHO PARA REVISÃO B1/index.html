@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios - Painel de Soluções Corporativas</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <script>
+        function calculo_Cotacao(){ 
+
+            var valor_Real = document.getElementById('valorReal')
+            
+            var cotacao = valor_Real.value * 5.19
+
+            var resultado = document.getElementById('resConversor')
+
+            resultado.innerText = cotacao.toFixed(2)
+
+        }
+
+
+
+
+    </script>
+    <header>
+        <h1>Faculdade Anhanguera - Unidade Osasco</h1>
+        <p>Exercicios de Revisão da B1 - Desenvolvimento em Javascript</p>
+    </header>
+
+    <div class="dashboard">
+        
+        <div class="card">
+            <h3>1. Câmbio Comercial</h3>
+            <div class="form-group">
+                <label>Valor em Reais (R$)</label>
+                <input type="number" id="valorReal" placeholder="Ex: 1500.00">
+            </div>
+            <button onclick="calculo_Cotacao()">Calcular Cotação </button>
+            <div class="result-box" id="resConversor">Aguardando dados...</div>
+        </div>
+
+        <div class="card">
+            <h3>2. PDV - Aplicar Desconto</h3>
+            <div class="form-group">
+                <label>Preço do Produto (R$)</label>
+                <input type="number" id="precoProduto" placeholder="Ex: 250.00">
+            </div>
+            <div class="form-group">
+                <label>Cupom de Desconto</label>
+                <select id="cupom">
+                    <option value="0">Sem Cupom (0%)</option>
+                    <option value="0.05">CLIENTE_NOVO (5%)</option>
+                    <option value="0.10">SOCIOTORCEDOR (10%)</option>
+                    <option value="0.20">BLACKFRIDAY (20%)</option>
+                </select>
+            </div>
+            <button>Finalizar Venda</button>
+            <div class="result-box" id="resVenda">Aguardando venda...</div>
+        </div>
+
+        <div class="card">
+            <h3>3. Simulador de Investimento</h3>
+            <div class="form-group">
+                <label>Capital Inicial (R$)</label>
+                <input type="number" id="capital" placeholder="Ex: 1000.00">
+            </div>
+            <div class="form-group">
+                <label>Taxa de Juros Mensal (%)</label>
+                <input type="number" id="taxa" placeholder="Ex: 1.5">
+            </div>
+            <button>Simular Rendimento</button>
+            <div class="result-box" id="resInvestimento">Aguardando simulação...</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <h1>Prof. Marcel Teixeira</h1>
+        <p>Desenvolvimento em Javascript</p>
+    </footer>
+
+</body>
+</html>
