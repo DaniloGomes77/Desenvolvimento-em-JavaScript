@@ -30,7 +30,7 @@
 
             var Desconto = precoProduto.value * cupom.value
 
-            resultadoDesconto = document.getElementById('resVenda')
+            var resultadoDesconto = document.getElementById('resVenda')
 
             resultadoDesconto.innerText = Desconto.toFixed(2)
 
@@ -44,7 +44,7 @@
 
             var investimento = Number(capital.value) + (Number(capital.value) * Number(taxa.value) / 100)
 
-            resultadoInvestimento = document.getElementById('resInvestimento')
+            var resultadoInvestimento = document.getElementById('resInvestimento')
 
             resultadoInvestimento.innerText = investimento.toFixed(2)
         }
