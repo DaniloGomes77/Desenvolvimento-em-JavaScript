@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/calculadora.js" defer></script>
+</head>
+<body>
+	<header>
+        <h1>Faculdade Anhanguera - Unidade Osasco</h1>
+        <p>Calculadora Pessoal - Desenvolvimento em Javascript</p>
+    </header>
+    <div id="conteudo">
+        <h1 id="titulo">
+            Calculadora Simples
+        </h1>
+        
+        <div id="form">
+            <form name="frmCalculadora" method="get" action="" onsubmit="return false;">
+                <div class="campo-grupo">
+                    <label for="valor1">Valor 1:</label>
+                    <input type="text" name="txtn1" value="" id="valor1" class="valor" placeholder="0" autocomplete="off">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="valor2">Valor 2:</label>
+                    <input type="text" name="txtn2" value="" id="valor2" class="valor" placeholder="0" autocomplete="off">
+                </div>
+
+                <div class="divOperacoes">
+                    <div name="btnSomar" id="somar" class="botao">+</div>
+                    <div name="btnSubtrair" id="subtrair" class="botao">-</div>
+                </div>
+
+                <div class="divOperacoes">
+                    <div name="btnMultiplicar" id="multiplicar" class="botao">*</div>
+                    <div name="btnDividir" id="dividir" class="botao">/</div>
+                </div>
+
+                <div class="divOperacoes">
+                    <div name="btnCE" id="ce" class="botao">CE</div>
+                </div>
+            </form>
+        </div>
+
+        <div id="painel-resultado">
+            <div class="rotulo-resultado">Resultado</div>
+            <div id="resultado">0</div>
+        </div>
+    </div>
+
+	<footer>
+        <h1>Prof. Marcel Teixeira</h1>
+        <p>Desenvolvimento em Javascript</p>
+    </footer>
+</body>
+</html>
