@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP - SENAI</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    
+    <main id="cep">
+        <div id="form-cep">
+            <header id="titulo">
+                <div class="header-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <div>
+                    <h1>CEP Online da Faculdade Anhnaguera</h1>
+                    <p class="subtitulo">Localizador de Endereço Automático</p>
+                </div>
+            </header>
+            
+            <form name="frmCEP" autocomplete="off" onsubmit="return false;">
+                <!-- Seção de Busca -->
+                <div class="secao-busca">
+                    <div class="grupo-campo">
+                        <label for="txtcep">CEP:</label>
+                        <div class="input-com-botao">
+                            <input type="text" name="txtcep" id="txtcep" placeholder="00000-000" maxlength="9">
+                            <input type="button" name="btnpesquisar" value="Consultar CEP" id="pesquisar">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divisor">
+                    <span>Dados do Endereço</span>
+                </div>
+
+                <!-- Dados do Endereço -->
+                <div class="grid-form">
+                    <div class="item-total-100 grupo-campo">
+                        <label for="txtlogradouro">Logradouro / Rua:</label>
+                        <input type="text" name="txtlogradouro" id="txtlogradouro" placeholder="Ex: Av. Paulista" maxlength="100">
+                    </div>
+
+                    <div class="linha-dupla">
+                        <div class="item-total-30 grupo-campo">
+                            <label for="txtnro">Número:</label>
+                            <input type="text" name="txtnro" id="txtnro" placeholder="123" maxlength="10">
+                        </div>
+                        <div class="item-total-40 grupo-campo">
+                            <label for="txtcompl">Complemento:</label>
+                            <input type="text" name="txtcompl" id="txtcompl" placeholder="Apto 42, Bloco B" maxlength="15">
+                        </div>
+                    </div>
+
+                    <div class="linha-dupla">
+                        <div class="item-total-40 grupo-campo">
+                            <label for="txtbairro">Bairro:</label>
+                            <input type="text" name="txtbairro" id="txtbairro" placeholder="Centro" maxlength="30">
+                        </div>
+                        <div class="item-total-40 grupo-campo">
+                            <label for="txtcidade">Cidade:</label>
+                            <input type="text" name="txtcidade" id="txtcidade" placeholder="São Paulo" maxlength="50">
+                        </div>
+                    </div>
+
+                    <div class="linha-dupla">
+                        <div class="item-total-30 grupo-campo">
+                            <label for="txtuf">Estado (UF):</label>
+                            <input type="text" name="txtuf" id="txtuf" placeholder="SP" maxlength="2">
+                        </div>
+                        <div class="item-total-40 grupo-campo">
+                            <label for="txtpais">País:</label>
+                            <input type="text" name="txtpais" id="txtpais" value="Brasil" maxlength="30">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <footer id="rodape-card">
+                <span>Faculdade Anhnaguera - by Prof. Marcel Neves Teixeira</span>
+            </footer>
+        </div>
+    </main>
+
+</body>
+</html>

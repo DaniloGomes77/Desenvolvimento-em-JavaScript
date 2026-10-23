@@ -1,0 +1,255 @@
+/* Reset Global e Tipografia */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Fundo Moderno com Gradiente e Formas Decorativas */
+body {
+    background: linear-gradient(135deg, #2a1e0f 0%, #3b2d1e 50%, #4a250f 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Esferas luminosas de fundo (Efeito de Profundidade) */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+body::before {
+    width: 350px;
+    height: 350px;
+    background: rgba(247, 134, 5, 0.25);
+    top: 10%;
+    left: 15%;
+}
+
+body::after {
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 107, 43, 0.2);
+    bottom: 10%;
+    right: 15%;
+}
+
+/* Área Central */
+#cep {
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cartão Principal Glassmorphism */
+#form-cep {
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Cabeçalho */
+#titulo {
+    background: linear-gradient(90deg, #962f00, #f76605);
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.header-icon svg {
+    stroke: #ffb68c;
+}
+
+#titulo h1 {
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.subtitulo {
+    font-size: 0.8em;
+    color: #cbd5e1;
+    margin-top: 2px;
+}
+
+/* Formulário */
+form {
+    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Seção do CEP (Destaque Principal) */
+.secao-busca {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 182, 140, 0.25);
+}
+
+.input-com-botao {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.input-com-botao input[type="text"] {
+    flex: 1;
+    font-size: 1.1em !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Linha Divisória com Texto */
+.divisor {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 5px 0;
+}
+
+.divisor::before, .divisor::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.divisor span {
+    padding: 0 10px;
+}
+
+/* Grid de Campos */
+.grid-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.linha-dupla {
+    display: flex;
+    gap: 15px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+/* Labels com Cor de Destaque */
+#form-cep label {
+    font-size: 0.82em;
+    color: #ffb68c;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Inputs de Texto */
+#form-cep input[type="text"] {
+    width: 100%;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(15, 23, 42, 0.8);
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 0.95em;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+#form-cep input[type="text"]::placeholder {
+    color: #475569;
+}
+
+#form-cep input[type="text"]:focus {
+    background-color: rgba(15, 23, 42, 0.95);
+    border-color: #0596f7;
+    box-shadow: 0 0 0 3px rgba(5, 150, 247, 0.25);
+}
+
+/* Botão Consultar */
+#form-cep input[type="button"] {
+    height: 42px;
+    padding: 0 24px;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #0596f7, #005696);
+    font-size: 0.9em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(5, 150, 247, 0.3);
+}
+
+#form-cep input[type="button"]:hover {
+    background: linear-gradient(135deg, #21a1f9, #036cb8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(5, 150, 247, 0.45);
+}
+
+#form-cep input[type="button"]:active {
+    transform: translateY(0);
+}
+
+/* Rodapé do Card */
+#rodape-card {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 12px 30px;
+    text-align: center;
+    font-size: 0.75em;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsividade */
+@media (max-width: 580px) {
+    .linha-dupla {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .input-com-botao {
+        flex-direction: column;
+    }
+    #form-cep input[type="button"] {
+        width: 100%;
+    }
+}
