@@ -21,7 +21,7 @@ body {
 
     align-items: center;
     /* Fundo com gradiente moderno que funciona perfeitamente sem depender de imagem externa */
-    background: linear-gradient(135deg, #1e1e2f 0%, #0f1016 100%);
+    background: linear-gradient(135deg, #1e1e2f 0%, #1c1625 100%);
     background-attachment: fixed;
     padding: 20px;
 

@@ -8,6 +8,8 @@ const botaoSubtrair    = document.getElementById('subtrair')
 const botaoMultiplicar = document.getElementById('multiplicar')
 const botaoDividir     = document.getElementById('dividir')
 const botaoLimpar      = document.getElementById('ce') 
+const txtValor1        = document.getElementById('valor1')
+const txtValor2        = document.getElementById('valor2')
 
 //função para calcular as operações matemáticas. 
 function calcular(operacao){
@@ -55,4 +57,22 @@ botaoMultiplicar.addEventListener('click',function(){
 
 botaoDividir.addEventListener('click',function(){
     calcular('dividir')
+})
+
+//Função para captar a tecla digitada pelo usuario no momento da digitação
+txtValor1.addEventListener('keypress', function(){
+   
+    let tecla = event.key // recebe a tecla digitada pelo usuário, antes de chegar na caixa
+
+    if(isNaN(tecla)){ // verifica se a tecla não é um número
+        event.preventDefault() //Cancela o evento de digitação 
+    }
+})
+
+txtValor2.addEventListener('keypress', function(){
+    let tecla = event.key
+
+    if(isNaN(tecla)){
+        event.preventDefault()
+    }
 })
